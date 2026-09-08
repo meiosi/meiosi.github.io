@@ -1,0 +1,158 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* -webkit-tap-highlight-color: transparent; */
+  }
+  *{
+    margin: 0;
+    padding: 0;
+  }
+
+
+.navbar{
+  margin-top: 1%;
+  position: fixed; /* Fixes the header to the viewport */       /* Positions the header at the left */
+  width: 100%;   /* Set a height for the header, adjust as needed */
+  display: flex;   /* Enables flexbox for centering */
+  justify-content: center; /* Centers the content horizontally */
+  align-content: center;     /* Centers the content vertically */
+  z-index: 100;
+}
+
+#gif{
+  width: clamp(300px, 25vw, 1000px);
+  object-fit: contain;
+}
+
+
+@font-face {
+  font-family: "Pixelized";
+  src: url('Pixelized-Handwriting.woff') format(woff);
+}
+
+
+
+ul,li{list-style: none;}
+a{ text-decoration: none;}
+
+.exhibitions-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Aligns content to the bottom */
+  height: 100dvh;
+  width: 100vw;
+}
+
+.exhibitions-list{
+  padding-left: 2%;
+  font-family: "Pixelized";
+  text-align: left;
+}
+
+.exhib, .exhib-info{
+    display: flex;
+    align-items: baseline;
+    gap: clamp(1rem, 3vw, 5rem);
+}
+
+.arrow img{
+    width: clamp(2rem, 3vw, 5rem);
+    /*filter: invert(1);*/
+}
+h1 , .exhib-text{
+  color: #000000;
+  font-size: clamp(2rem, 3vw, 5rem);
+}
+
+.exhib-geo{
+  color: #000000;
+  font-size: clamp(1rem, 2vw, 3rem);
+}
+
+
+
+
+.input-toggler{ display: none;}
+.menu-toggler {height: auto; position: fixed; right: 2.5%; bottom: 2.5%; z-index: 100; cursor: pointer; justify-content: center; align-items: center; filter: drop-shadow(3px 0 0 white) 
+  drop-shadow(0 2px 0 white)
+  drop-shadow(-2px 0 0 white) 
+  drop-shadow(0 -2px 0 white);}
+
+.menu-toggler-icon, img{width: clamp(85px, 8vw, 10px); transition: 100ms ease-in-out;}
+
+.input-toggler:checked ~ .menu-toggler img {transform:rotate(-45deg); transition: 100ms ease-in-out;}
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  width: 100vw;
+  background:#ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  transform: translateY(100%);
+  transition: 300ms ease-in-out;
+}
+
+
+
+
+.menu{
+  padding: 0%;
+  margin: 0%;
+  font-size: clamp(3rem, 1vw, 5rem);
+  font-family: "Pixelized";
+  justify-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1;
+  
+}
+
+.menu-text{
+  color: #ff0000;
+}
+
+.input-toggler:checked ~ .sidebar {transform: translateY(0%); transition: 300ms ease-in-out;}
+
+li.menu-link:nth-child(odd){
+  animation: 1s shake-odd infinite steps(2, end);
+}
+
+li.menu-link:nth-child(even){
+  animation: 1s shake-even infinite steps(2, end);
+}
+
+@keyframes shake-odd {
+  0% { transform: rotate(-2deg); }
+  100% { transform: rotate(2deg); }
+}
+
+@keyframes shake-even {
+  0% { transform: rotate(2deg); }
+  100% { transform: rotate(-2deg); }
+}
+
+@media   (max-width: 900px) {
+  .exhibitions-list{
+  padding: 5%;
+  padding-bottom: 8rem;
+}
+    .exhib{
+        padding-top: 5%;
+    }
+
+    .exhib-info{
+      display: block;
+    }
+    .exhib-geo{
+      margin-top: -2%;
+    }
+    .menu-toggler {left: 50%; right: auto; bottom: 2.5%; transform: translateX(-50%);}
+  
+}

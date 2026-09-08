@@ -1,0 +1,228 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100dvh;
+    overflow-x: hidden;
+    scroll-snap-type: y proximity;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+  }
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+@font-face {
+  font-family: "Pixelized";
+  src: url('Pixelized-Handwriting.woff') format(woff);
+}
+
+
+
+.navbar{
+  margin-top: 1%;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  z-index: 100;
+}
+
+#gif{
+  width: clamp(300px, 25vw, 1000px);
+  object-fit: contain;
+}
+
+
+.project-item {
+  position: relative;
+  overflow: hidden;
+  scroll-snap-align: start;
+  width: 100vw;
+  height: 100dvh;
+  margin: 0;
+  padding: 1%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  paint-order: stroke fill;
+}
+
+h2{
+  font-family: 'Pixelized', sans-serif;
+  font-size: clamp(30px, 7vw, 40px);
+  color: white;
+  text-align: center;
+  line-height: .3;
+  -webkit-text-stroke-width: .25rem;
+  -webkit-text-stroke-color: black;
+}
+p{
+  font-family: 'Pixelized', sans-serif;
+  font-size: clamp(20px, 5vw, 25px);
+  color: white;
+  text-align: center;
+  -webkit-text-stroke-width: .25rem;
+  -webkit-text-stroke-color: black;
+}
+
+
+video {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  display: block;
+}
+
+
+
+
+
+#khali{
+  background-image: url('./Img/projects/RubalKhaliBG.jpeg');
+}
+
+
+#doppiosalto{
+  background-image: url('./Img/projects/DoppiosaltoBG.jpg');
+}
+
+#maya{
+  background-image: url('./Img/projects/MayaBG.JPG');
+}
+
+#sandrw{
+  background-image: url('./Img/projects/SandrwBG.jpeg');
+}
+
+#memistenza{
+  background-image: url('./Img/projects/MemistenzaBG.jpg');
+}
+
+#memir{
+  background-image: url('./Img/projects/MemirBG.jpg');
+}
+
+#shitpostland{
+  background-image: url('./Img/projects/ShitpostingBG.jpeg');
+}
+
+#kulturmilk{
+  background-image: url('./Img/projects/KulturMilkBG.jpeg');
+}
+
+#setamarezzata{
+  background-image: url('./Img/projects/Come_seta_marezzataBG.JPG');
+}
+
+
+ul,li{list-style: none;}
+a{ text-decoration: none;}
+
+.input-toggler{ display: none;}
+.menu-toggler {height: auto; position: fixed; left: 50%; bottom: 2.5%; transform: translateX(-50%); z-index: 100; cursor: pointer; justify-content: center; align-items: center; filter: drop-shadow(3px 0 0 white) 
+  drop-shadow(0 2px 0 white)
+  drop-shadow(-2px 0 0 white) 
+  drop-shadow(0 -2px 0 white);}
+
+.menu-toggler-icon, img{width: clamp(85px, 8vw, 10px); transition: 100ms ease-in-out;}
+
+.input-toggler:checked ~ .menu-toggler img {transform:rotate(-45deg); transition: 100ms ease-in-out;}
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  width: 100vw;
+  background:#ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  transform: translateY(100%);
+  transition: 300ms ease-in-out;
+}
+
+
+
+
+.menu{
+  padding: 0%;
+  margin: 0%;
+  font-size: clamp(3rem, 1vw, 5rem);
+  font-family: "Pixelized";
+  justify-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1;
+  
+}
+
+.videobg-vert{display: none;}
+
+.menu-text{
+  color: #ff0000;
+}
+
+.input-toggler:checked ~ .sidebar {transform: translateY(0%); transition: 300ms ease-in-out;}
+
+li.menu-link:nth-child(odd){
+  animation: 1s shake-odd infinite steps(2, end);
+}
+
+li.menu-link:nth-child(even){
+  animation: 1s shake-even infinite steps(2, end);
+}
+
+@keyframes shake-odd {
+  0% { transform: rotate(-2deg); }
+  100% { transform: rotate(2deg); }
+}
+
+@keyframes shake-even {
+  0% { transform: rotate(2deg); }
+  100% { transform: rotate(-2deg); }
+}
+
+@media (max-width: 900px) {
+
+  html, body {
+    scroll-snap-type: none;
+  }
+  
+
+  h2{
+    line-height: 0.6;
+    padding: 5%;
+    padding-top: 0;
+  }
+
+  p{
+    padding: 5%;
+    padding-top: 0;
+  }
+
+  #maya{
+    background-image: url('./Img/projects/MayaBG-Vert.jpg');
+  }
+
+  .videobg-oriz{display: none;}
+
+  .videobg-vert{display: block;}
+
+}

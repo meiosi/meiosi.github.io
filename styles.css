@@ -1,0 +1,149 @@
+html, body {
+    background-image: url("./Img/Cuori2.gif"), url("./Img/HomeBG-1-450kb.jpg");
+    background-repeat: no-repeat, no-repeat;
+    background-size: clamp(200px, 25vw, 1000px) auto, cover;
+    background-position: center center, center center;
+    background-attachment: fixed, fixed;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100dvh;
+  }
+
+
+
+@font-face {
+  font-family: "Pixelized";
+  src: url('Pixelized-Handwriting.woff') format(woff);
+}
+
+
+
+#c {
+  position: fixed;
+   width: clamp(85px, 10vw, 150px);
+    height: clamp(85px, 10vw, 150px);
+   margin-top: 1.25%;
+   margin-left: 1.25%;
+   filter: drop-shadow(3px 0 0 white) 
+  drop-shadow(0 2px 0 white)
+  drop-shadow(-2px 0 0 white) 
+  drop-shadow(0 -2px 0 white);
+  cursor: pointer;
+    }
+
+
+#techmanet{
+  width: clamp(85px, 8vw, 100px);
+  left: 1%;
+  bottom: 2.5%;
+  position: fixed;
+  filter: drop-shadow(3px 0 0 white) 
+  drop-shadow(0 2px 0 white)
+  drop-shadow(-2px 0 0 white) 
+  drop-shadow(0 -2px 0 white);
+}
+
+#contacts {
+  
+  width: auto;
+  height: auto;
+  position: fixed;
+  bottom: 1%;
+  right: 1%;
+}
+
+ul,li{list-style: none;}
+a{text-decoration: none;}
+
+.input-toggler{ display: none;}
+.menu-toggler {width: auto; height: auto; position: fixed; right: 1%; top: 2.5%; z-index: 100; cursor: pointer; justify-content: center; align-items: center; filter: drop-shadow(3px 0 0 white) 
+  drop-shadow(0 2px 0 white)
+  drop-shadow(-2px 0 0 white) 
+  drop-shadow(0 -2px 0 white);}
+
+.menu-toggler-icon, img{width: clamp(85px, 8vw, 10px); transition: 100ms ease-in-out;}
+
+.input-toggler:checked ~ .menu-toggler img {transform:rotate(-45deg); transition: 100ms ease-in-out;}
+
+
+.sidebar {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background:#ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  transform: translateY(-100%);
+  transition: 300ms;
+}
+
+
+
+
+.menu{
+  padding: 0%;
+  margin: 0%;
+  font-size: clamp(3rem, 1vw, 5rem);
+  font-family: "Pixelized";
+  justify-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1;
+  
+}
+
+.menu-text{
+  color: #ff0000;
+}
+
+
+.social img{
+  height: clamp(60px, 3vw, 70px);
+  width: auto;
+}
+.social-link{
+  filter: invert(1);
+  display: inline-block;
+}
+
+li.social-link:nth-child(even) , li.menu-link:nth-child(odd) , .input-toggler:not(:checked) ~ .menu-toggler img{
+  animation: 1s shake-odd infinite steps(2, start);
+}
+
+li.social-link:nth-child(odd) , li.menu-link:nth-child(even) , #techmanet{
+  animation: 1s shake-even infinite steps(2, start);
+}
+
+@keyframes shake-odd {
+  0% { transform: rotate(-2deg); }
+  100% { transform: rotate(2deg); }
+}
+
+@keyframes shake-even {
+  0% { transform: rotate(2deg); }
+  100% { transform: rotate(-2deg); }
+}
+
+.input-toggler:checked ~ .sidebar {transform: translateY(0%); transition: 300ms;}
+
+@media   (max-width: 900px) {
+  #c {
+    margin-top: 5%;
+    margin-left: 3%;
+  }
+  
+  .menu-toggler{ right: 5%; top: 2.5%;}
+
+  #techmanet{left: 3%; bottom: 2.5%;}
+
+  body { background-size: 75vw auto, cover; }
+  
+  #contacts { bottom: 0%; right: 5%; }
+
+  .social-link{display: flex; line-height: 3;}
+
+  .social img{ width: clamp(60px, 5vw, 85px); height: auto; }
+}
