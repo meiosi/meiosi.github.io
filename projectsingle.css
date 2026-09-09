@@ -37,7 +37,6 @@ html, body {
 #gif{
     position: fixed;
   left: 50%;
-  top: 2.5%;
   transform: translateX(-50%);
   width: clamp(300px, 25vw, 1000px);
   z-index: 300;
