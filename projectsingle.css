@@ -239,6 +239,8 @@ p{ text-align:justify;}
 
 
 @media (max-width: 900px) {
+
+  body{padding-bottom: 1em;}
   #c,
   .menu-toggler {
     top: auto;
