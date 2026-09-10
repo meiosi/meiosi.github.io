@@ -42,7 +42,6 @@ html, body {
   height: 100dvh;
   padding: 0%;
   position: relative;
-  margin-bottom: 2.5%;
 }
 
 
@@ -185,7 +184,7 @@ li.menu-link:nth-child(even){
 
 .menu-toggler {bottom: 0.5%;}
 
-.site-main{padding-bottom: 10%; padding-top: 15%;}
+main{padding-bottom: 10%; padding-top: 15%;}
 
 
 }
